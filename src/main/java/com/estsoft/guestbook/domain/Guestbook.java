@@ -30,16 +30,16 @@ public class Guestbook {
 	@Lob
 	private String message;
 	
-	@Column(name = "passwd", nullable = false, length = 32)
+	@Column(name = "password", nullable = false, length = 32)
 	private String password;
 
 	@Column(name = "regDate", nullable = false)
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date regDate;
 	
-	@Column(name = "gender", nullable = false)
-	@Enumerated(value = EnumType.ORDINAL)
-	private Gender gender;
+//	@Column(name = "gender", nullable = false, columnDefinition="enum('FEMALE','MALE')")
+//	@Enumerated(value = EnumType.STRING)
+//	private Gender gender;
 	
 	public Guestbook(){		}
 	
@@ -49,7 +49,6 @@ public class Guestbook {
 		this.message = message;
 		this.password = password;
 		this.regDate = regDate;
-		this.gender = gender;
 	}
 
 	public Long getNo() {
@@ -91,19 +90,19 @@ public class Guestbook {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-
-	public Gender getGender() {
-		return gender;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
-	}
+//
+//	public Gender getGender() {
+//		return gender;
+//	}
+//
+//	public void setGender(Gender gender) {
+//		this.gender = gender;
+//	}
 
 	@Override
 	public String toString() {
 		return "Guestbook [no=" + no + ", name=" + name + ", message=" + message + ", password=" + password
-				+ ", regDate=" + regDate + ", gender=" + gender + "]";
+				+ ", regDate=" + regDate ;
 	}
 	
 

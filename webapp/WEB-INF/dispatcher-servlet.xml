@@ -16,7 +16,8 @@
 
 	<!-- 3. @Controller 스캔 -->
 	<context:annotation-config />
-	<context:component-scan base-package="com.estsoft.guestbook" />
+	<!-- controller만 스캐닝 하게 -->
+	<context:component-scan base-package="com.estsoft.guestbook.controller" />
 
 	<!-- 4. 뷰 리졸버 -->
 	<bean id="viewResolver"
